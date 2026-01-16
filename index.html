@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!doctype html>
+<html lang="bn" class="h-full scroll-smooth">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youth Shield – বৃহত্তর সামাজিক সুরক্ষা নেটওয়ার্ক</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #ec4899;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
+        
+        body { font-family: 'Hind Siliguri', sans-serif; }
+
+        .mesh-gradient {
+            background: radial-gradient(at 0% 0%, #6366f1 0, transparent 50%), 
+                        radial-gradient(at 50% 0%, #a855f7 0, transparent 50%), 
+                        radial-gradient(at 100% 0%, #ec4899 0, transparent 50%);
+            background-color: #4f46e5;
+        }
+
+        .glass-morph {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .hover-lift { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .hover-lift:hover { transform: translateY(-10px); }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover { opacity: 0.9; transform: scale(1.02); }
+
+        /* Modal Animation */
+        .modal-active { display: flex !important; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    </style>
+ </head>
+ <body class="bg-slate-50">
+
+  <nav class="fixed w-full z-50 glass-morph px-6 py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <span class="text-3xl">🛡️</span>
+            <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Youth Shield</span>
+        </div>
+        <div class="hidden md:flex gap-8 font-semibold text-slate-700">
+            <a href="#home" class="hover:text-indigo-600 transition">হোম</a>
+            <a href="#stats" class="hover:text-indigo-600 transition">প্রভাব</a>
+            <a href="#report" class="hover:text-indigo-600 transition">রিপোর্ট</a>
+            <a href="#awareness" class="hover:text-indigo-600 transition">সচেতনতা</a>
+        </div>
+        <a href="#report" class="btn-gradient text-white px-6 py-2 rounded-full font-bold shadow-lg">জরুরি রিপোর্ট</a>
+    </div>
+  </nav>
+
+  <section id="home" class="mesh-gradient pt-32 pb-20 px-6 text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 space-y-6">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">তরুণদের হাত ধরুন, <br><span class="text-yellow-300">অন্ধকার রুখে দিন।</span></h1>
+            <p class="text-xl text-indigo-50 leading-relaxed">মাদক, চাঁদাবাজি এবং সামাজিক অন্যায়ের বিরুদ্ধে আপনার একটি গোপন রিপোর্ট বদলে দিতে পারে হাজারো জীবন। আমরা আছি আপনার পাশে, আপনার পরিচয় সম্পূর্ণ গোপন রেখে।</p>
+            <div class="flex gap-4">
+                <button onclick="openModal('আমাদের লক্ষ্য', 'Youth Shield একটি অলাভজনক প্ল্যাটফর্ম যা মূলত তরুণ সমাজকে মাদক, চাঁদাবাজি এবং সামাজিক অবক্ষয় থেকে রক্ষা করতে কাজ করে। আমরা সরাসরি আইনশৃঙ্খলা বাহিনীর সাথে সমন্বয় করি এবং আপনার দেওয়া তথ্যের শতভাগ গোপনীয়তা নিশ্চিত করি। আমাদের মূল লক্ষ্য একটি অপরাধমুক্ত ও সুস্থ বাংলাদেশ গড়ে তোলা।')" class="bg-white text-indigo-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-300 transition-colors">আরও জানুন</button>
+                <button onclick="openModal('গাইডলাইন', '১. ঘটনার সঠিক স্থান উল্লেখ করুন। ২. ঘটনার ধরন নির্বাচন করুন। ৩. বিস্তারিত বর্ণনায় ব্যক্তি বা সময়ের তথ্য দিন। আপনার নিরাপত্তা আমাদের অগ্রাধিকার।')" class="border-2 border-white/30 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10">গাইডলাইন</button>
+            </div>
+        </div>
+        <div class="flex-1 relative">
+            <div class="glass-morph p-8 rounded-[40px] text-indigo-900 shadow-2xl animate-pulse">
+                <h3 class="font-bold text-2xl mb-4">লাইভ অ্যাকশন 🚨</h3>
+                <p class="text-slate-600">বর্তমানে আপনার এলাকায় ৫টি রিপোর্ট প্রসেসিং এ আছে। প্রতিটি তথ্যই মূল্যবান।</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="stats" class="py-20 px-6 max-w-7xl mx-auto -mt-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="glass-morph p-10 rounded-3xl text-center hover-lift">
+            <div class="text-4xl mb-4">👥</div>
+            <div class="text-3xl font-bold text-slate-800">১২,৫০০+</div>
+            <p class="text-slate-500">স্বেচ্ছাসেবক</p>
+        </div>
+        <div class="glass-morph p-10 rounded-3xl text-center hover-lift">
+            <div class="text-4xl mb-4">✅</div>
+            <div class="text-3xl font-bold text-slate-800">৮৪০+</div>
+            <p class="text-slate-500">সমাধানকৃত ইস্যু</p>
+        </div>
+        <div class="glass-morph p-10 rounded-3xl text-center hover-lift">
+            <div class="text-4xl mb-4">🔒</div>
+            <div class="text-3xl font-bold text-slate-800">১০০%</div>
+            <p class="text-slate-500">গোপনীয়তা</p>
+        </div>
+        <div class="glass-morph p-10 rounded-3xl text-center hover-lift">
+            <div class="text-4xl mb-4">📞</div>
+            <div class="text-3xl font-bold text-slate-800">৯৯৯</div>
+            <p class="text-slate-500">জরুরি সহায়তা</p>
+        </div>
+    </div>
+  </section>
+
+  <section id="report" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto glass-morph rounded-[50px] overflow-hidden flex flex-col md:flex-row shadow-2xl border-none">
+        <div class="md:w-1/3 bg-indigo-600 p-12 text-white">
+            <h2 class="text-4xl font-bold mb-6">গোপন রিপোর্ট প্যানেল</h2>
+            <p class="mb-8 opacity-80">আপনার দেওয়া তথ্য আমাদের তদন্তকারী দলের কাছে সরাসরি পৌঁছে যাবে। ভয় নেই, আমরা আপনার পরিচয় কাউকে জানাবো না।</p>
+            <ul class="space-y-4">
+                <li class="flex items-center gap-2">✔ এনক্রিপ্টেড ডাটা</li>
+                <li class="flex items-center gap-2">✔ দ্রুত পদক্ষেপ</li>
+                <li class="flex items-center gap-2">✔ সঠিক প্রমান</li>
+            </ul>
+        </div>
+        <div class="md:w-2/3 p-12 bg-white">
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block font-semibold mb-2 text-slate-700">ঘটনার স্থান</label>
+                        <input type="text" placeholder="যেমন: ধানমন্ডি, ঢাকা" class="w-full bg-slate-50 border-none p-4 rounded-xl focus:ring-2 ring-indigo-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-2 text-slate-700">ধরন</label>
+                        <select class="w-full bg-slate-50 border-none p-4 rounded-xl focus:ring-2 ring-indigo-500 outline-none">
+                            <option>মাদক বেচাকেনা</option>
+                            <option>চাঁদাবাজি</option>
+                            <option>সামাজিক অশান্তি</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2 text-slate-700">বিস্তারিত বিবরণ</label>
+                    <textarea rows="4" placeholder="ঘটনাটি বিস্তারিতভাবে লিখুন..." class="w-full bg-slate-50 border-none p-4 rounded-xl focus:ring-2 ring-indigo-500 outline-none"></textarea>
+                </div>
+                <button type="button" class="w-full btn-gradient py-5 text-white font-bold text-xl rounded-2xl shadow-xl">রিপোর্ট জমা দিন</button>
+            </form>
+        </div>
+    </div>
+  </section>
+
+  <section id="awareness" class="py-20 px-6 bg-slate-100">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-800">সচেতনতামূলক রিসোর্স</h2>
+            <p class="text-slate-500 mt-4">জানুন কিভাবে নিজেকে এবং আপনার পরিবারকে নিরাপদ রাখবেন</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-3xl p-4 shadow-md hover-lift">
+                <div class="h-48 bg-indigo-100 rounded-2xl mb-4 overflow-hidden flex items-center justify-center text-6xl">🚭</div>
+                <h4 class="text-xl font-bold mb-2 p-2">মাদকের কুফল ও প্রতিকার</h4>
+                <p class="text-slate-600 p-2">মাদকের হাত থেকে কিশোরদের রক্ষা করার ৫টি বৈজ্ঞানিক উপায়...</p>
+                <button onclick="openModal('মাদকের কুফল', 'মাদক একটি পরিবার ও সমাজকে ধ্বংস করে দেয়। এর প্রতিকারে পরিবারের সচেতনতা সবচেয়ে বেশি প্রয়োজন। আপনার সন্তান কোথায় যাচ্ছে এবং কাদের সাথে মিশছে সেদিকে নজর দিন। মাদকাসক্ত ব্যক্তিদের প্রতি ঘৃণা নয়, বরং সহমর্মিতা দেখিয়ে পুনর্বাসনের ব্যবস্থা করা উচিত।')" class="text-indigo-600 font-bold p-2 block mt-2 underline">আরও পড়ুন</button>
+            </div>
+            <div class="bg-white rounded-3xl p-4 shadow-md hover-lift">
+                <div class="h-48 bg-purple-100 rounded-2xl mb-4 overflow-hidden flex items-center justify-center text-6xl">⚖️</div>
+                <h4 class="text-xl font-bold mb-2 p-2">আপনার আইনি অধিকার</h4>
+                <p class="text-slate-600 p-2">চাঁদাবাজি হলে আইনের আশ্রয় কিভাবে নেবেন তার পূর্ণাঙ্গ গাইড...</p>
+                <button onclick="openModal('আইনি অধিকার', 'বাংলাদেশের প্রচলিত আইন অনুযায়ী চাঁদাবাজি একটি দণ্ডনীয় অপরাধ। কেউ ভয় দেখালে বা টাকা দাবি করলে আপনি নিকটস্থ থানায় অভিযোগ করতে পারেন। Youth Shield-এর মাধ্যমে আপনি নাম গোপন রেখেই অভিযোগ জমা দিতে পারেন, যা সরাসরি প্রশাসনের কাছে পৌঁছাবে।')" class="text-indigo-600 font-bold p-2 block mt-2 underline">আরও পড়ুন</button>
+            </div>
+            <div class="bg-white rounded-3xl p-4 shadow-md hover-lift">
+                <div class="h-48 bg-pink-100 rounded-2xl mb-4 overflow-hidden flex items-center justify-center text-6xl">📢</div>
+                <h4 class="text-xl font-bold mb-2 p-2">কমিউনিটি লিডারশিপ</h4>
+                <p class="text-slate-600 p-2">এলাকায় কিভাবে একটি সচেতন নাগরিক কমিটি গঠন করবেন...</p>
+                <button onclick="openModal('কমিউনিটি লিডারশিপ', 'এলাকায় শান্তি বজায় রাখতে তরুণদের নিয়ে ছোট ছোট টিম গঠন করুন। অপরাধমূলক কর্মকাণ্ড চোখে পড়লে সাথে সাথে ঐক্যবদ্ধভাবে প্রতিবাদ করুন এবং প্রশাসনকে অবহিত করুন। সচেতন নাগরিক কমিটিই পারে একটি অপরাধমুক্ত এলাকা নিশ্চিত করতে।')" class="text-indigo-600 font-bold p-2 block mt-2 underline">আরও পড়ুন</button>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <div id="infoModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-6">
+    <div class="glass-morph max-w-2xl w-full p-8 md:p-12 rounded-[40px] relative shadow-2xl">
+        <button onclick="closeModal()" class="absolute top-6 right-6 text-3xl font-bold text-slate-400 hover:text-red-500 transition">✕</button>
+        <h2 id="modalTitle" class="text-3xl font-bold mb-6 text-indigo-700"></h2>
+        <div id="modalText" class="text-slate-700 text-lg leading-relaxed space-y-4"></div>
+        <button onclick="closeModal()" class="mt-8 w-full py-4 bg-slate-100 rounded-2xl font-bold text-slate-600 hover:bg-indigo-50 transition">বন্ধ করুন</button>
+    </div>
+  </div>
+
+  <footer class="bg-slate-900 text-white py-20 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="space-y-4">
+            <div class="flex items-center gap-2">
+                <span class="text-3xl">🛡️</span>
+                <span class="text-2xl font-bold">Youth Shield</span>
+            </div>
+            <p class="opacity-60 text-sm">আমরা একটি নিরাপদ ও অপরাধমুক্ত সমাজ গড়ার লক্ষে কাজ করে যাচ্ছি। আমাদের সাথে যুক্ত হোন।</p>
+        </div>
+        <div>
+            <h5 class="font-bold mb-4">লিঙ্ক</h5>
+            <ul class="opacity-60 space-y-2 text-sm">
+                <li>আমাদের সম্পর্কে</li>
+                <li>নিরাপত্তা পলিসি</li>
+                <li>স্বেচ্ছাসেবী হন</li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="font-bold mb-4">জরুরি নম্বর</h5>
+            <ul class="opacity-60 space-y-2 text-sm">
+                <li>জাতীয় জরুরি সেবা: ৯৯৯</li>
+                <li>র‍্যাব হেল্পলাইন: ১০০</li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="font-bold mb-4">নিউজলেটার</h5>
+            <div class="flex">
+                <input type="text" placeholder="ইমেইল দিন" class="bg-white/10 border-none p-3 rounded-l-xl w-full text-sm outline-none">
+                <button class="bg-indigo-600 p-3 rounded-r-xl">✓</button>
+            </div>
+        </div>
+    </div>
+    <div class="border-t border-white/10 mt-16 pt-8 text-center opacity-40 text-sm">
+        © ২০২৪ Youth Shield | সর্বস্বত্ব সংরক্ষিত
+    </div>
+  </footer>
+
+  <script>
+    function openModal(title, text) {
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalText').innerText = text;
+        document.getElementById('infoModal').classList.add('modal-active');
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeModal() {
+        document.getElementById('infoModal').classList.remove('modal-active');
+        document.body.style.overflow = 'auto'; 
+    }
+
+    window.onclick = function(event) {
+        let modal = document.getElementById('infoModal');
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+  </script>
+
+ </body>
+</html>
+    
+  </body>
+  
+</html>
