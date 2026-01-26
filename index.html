@@ -791,25 +791,37 @@
   </div>
     </script>
     <script>
-      // আমরা আগের ফর্মটিতে একটি ID দিয়েছিলাম 'careerForm', সেটি ব্যবহার করছি
-      document.querySelector('#careerForm').addEventListener('submit', function(e) {
-        e.preventDefault(); 
+document.addEventListener('DOMContentLoaded', function() {
+    const careerForm = document.getElementById('careerForm'); // নিশ্চিত করুন ফর্মে এই ID টি আছে
+    
+    if(careerForm) {
+        careerForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // পেজ রিলোড হওয়া আটকাবে
+            
+            // ডাটা সংগ্রহ
+            const name = document.getElementById('cName').value;
+            const phone = document.getElementById('cPhone').value;
+            const type = document.getElementById('cType').value;
+            
+            // মেসেজ ফরম্যাট (বোল্ড টেক্সট সহ)
+            const message = `*নতুন ক্যারিয়ার আবেদন*%0A` +
+                            `-----------------------%0A` +
+                            `👤 নাম: ${encodeURIComponent(name)}%0A` +
+                            `📞 ফোন: ${encodeURIComponent(phone)}%0A` +
+                            `🎯 ধরণ: ${encodeURIComponent(type)}%0A` +
+                            `-----------------------%0A` +
+                            `উৎস: Youth Shield ওয়েবসাইট`;
+            
+            const myNumber = "8801932391139"; 
+            const whatsappURL = `https://api.whatsapp.com/send?phone=${myNumber}&text=${message}`;
+            
+            // নতুন ট্যাবে হোয়াটসঅ্যাপ ওপেন হবে
+            window.open(whatsappURL, '_blank');
+        });
+    }
+});
+</script>
 
-        // ফর্ম থেকে তথ্য সংগ্রহ
-        const name = this.querySelectorAll('input')[0].value;
-        const phone = this.querySelectorAll('input')[1].value;
-        const type = this.querySelector('select').value;
-
-        // মেসেজ তৈরি (বাংলায় সাজানো)
-        const message = `নতুন ক্যারিয়ার আবেদন (Youth Shield):%0A👤 নাম: ${name}%0A📞 ফোন: ${phone}%0A🎯 ধরণ: ${type}`;
-        
-        // এখানে আপনার নিজের নম্বরটি দিন (অবশ্যই প্রথমে ৮৮০ দিবেন)
-        const myNumber = "+8801932391139"; 
-
-        // হোয়াটসঅ্যাপ ওপেন হবে
-        window.open(`https://wa.me/${myNumber}?text=${message}`, '_blank');
-      });
-    </script>
   <script>
     // Modal Functions
     function openModal(title, text) {
