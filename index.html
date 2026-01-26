@@ -723,18 +723,17 @@
           <p class="text-emerald-100 text-sm italic">ব্যবসা শুরু বা প্রশিক্ষণের জন্য ফর্মটি পূরণ করুন</p>
         </div>
         
-        <form class="space-y-4">
-          <input type="text" placeholder="আপনার নাম" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-emerald-100 focus:bg-white/20 outline-none">
-          <input type="tel" placeholder="মোবাইল নম্বর" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-emerald-100 focus:bg-white/20 outline-none">
-          <select class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white focus:bg-white/20 outline-none">
-            <option class="text-slate-800">আবেদনের ধরণ বেছে নিন</option>
-            <option class="text-slate-800">ফ্রি কোর্স করতে চাই</option>
-            <option class="text-slate-800">চাকরি প্রয়োজন</option>
-            <option class="text-slate-800">ব্যবসার জন্য ঋণ/পরামর্শ</option>
-          </select>
-          <button type="submit" class="w-full py-4 bg-yellow-400 text-emerald-900 rounded-2xl font-black text-lg hover:bg-yellow-300 transition-all shadow-lg">আবেদন জমা দিন</button>
-        </form>
-
+        <form id="careerForm" class="space-y-4">
+    <input type="text" id="cName" placeholder="আপনার নাম" required class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-emerald-100 focus:bg-white/20 outline-none">
+    <input type="tel" id="cPhone" placeholder="মোবাইল নম্বর" required class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-emerald-100 focus:bg-white/20 outline-none">
+    <select id="cType" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white focus:bg-white/20 outline-none">
+        <option value="" disabled selected class="text-slate-800">আবেদনের ধরণ বেছে নিন</option>
+        <option value="ফ্রি কোর্স" class="text-slate-800">ফ্রি কোর্স করতে চাই</option>
+        <option value="চাকরি প্রয়োজন" class="text-slate-800">চাকরি প্রয়োজন</option>
+        <option value="ব্যবসার পরামর্শ" class="text-slate-800">ব্যবসার জন্য ঋণ/পরামর্শ</option>
+    </select>
+    <button type="submit" class="w-full py-4 bg-yellow-400 text-emerald-900 rounded-2xl font-black text-lg hover:bg-yellow-300 transition-all shadow-lg">আবেদন জমা দিন</button>
+</form>
         <div class="mt-6 pt-6 border-t border-white/10">
           <p class="text-center text-sm mb-4 opacity-80">অথবা দ্রুত যোগাযোগের জন্য</p>
           <a href="https://wa.me/8801932391139?text=হ্যালো! আমি Youth Shield ওয়েবসাইট থেকে ক্যারিয়ার ও কর্মসংস্থান বিষয়ে সহায়তা চাই।" 
@@ -780,37 +779,7 @@
    </div>
   </div>
     </script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const careerForm = document.getElementById('careerForm'); // নিশ্চিত করুন ফর্মে এই ID টি আছে
     
-    if(careerForm) {
-        careerForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // পেজ রিলোড হওয়া আটকাবে
-            
-            // ডাটা সংগ্রহ
-            const name = document.getElementById('cName').value;
-            const phone = document.getElementById('cPhone').value;
-            const type = document.getElementById('cType').value;
-            
-            // মেসেজ ফরম্যাট (বোল্ড টেক্সট সহ)
-            const message = `*নতুন ক্যারিয়ার আবেদন*%0A` +
-                            `-----------------------%0A` +
-                            `👤 নাম: ${encodeURIComponent(name)}%0A` +
-                            `📞 ফোন: ${encodeURIComponent(phone)}%0A` +
-                            `🎯 ধরণ: ${encodeURIComponent(type)}%0A` +
-                            `-----------------------%0A` +
-                            `উৎস: Youth Shield ওয়েবসাইট`;
-            
-            const myNumber = "8801932391139"; 
-            const whatsappURL = `https://api.whatsapp.com/send?phone=${myNumber}&text=${message}`;
-            
-            // নতুন ট্যাবে হোয়াটসঅ্যাপ ওপেন হবে
-            window.open(whatsappURL, '_blank');
-        });
-    }
-});
-</script>
 
   <script>
     // Modal Functions
@@ -912,5 +881,26 @@ document.addEventListener('DOMContentLoaded', function() {
  <script>
    (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c2ec04d45c0a472',t:'MTc2OTI0OTUzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
  </script>
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const careerForm = document.getElementById('careerForm');
+    if(careerForm) {
+        careerForm.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            const name = document.getElementById('cName').value;
+            const phone = document.getElementById('cPhone').value;
+            const type = document.getElementById('cType').value;
+            
+            const message = `*নতুন ক্যারিয়ার আবেদন (Youth Shield)*%0A👤 নাম: ${encodeURIComponent(name)}%0A📞 ফোন: ${encodeURIComponent(phone)}%0A🎯 ধরণ: ${encodeURIComponent(type)}`;
+            
+            const myNumber = "8801932391139"; 
+            const whatsappURL = `https://api.whatsapp.com/send?phone=${myNumber}&text=${message}`;
+            
+            window.location.href = whatsappURL;
+        });
+    }
+});
+</script>
  </body>
 </html>
